@@ -27,7 +27,7 @@ public class Bookings {
 
     @ManyToOne
     @JoinColumn(updatable = false, insertable = false)
-    private Users users;
+    private Users bookings;
 
     // id
     public Long getId() {
@@ -63,5 +63,14 @@ public class Bookings {
 
     public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
+    }
+
+    // isAccepted
+    public Boolean getIsAccepted() {
+        return isAccepted;
+    }
+
+    public void setIsAccepted(Boolean isAccepted) {
+        this.isAccepted = isAccepted;
     }
 }

@@ -51,7 +51,7 @@ public class BookingsController {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Updates an entry.", description = "Updates an entry.")
+    @Operation(summary = "Updates a booking.", description = "Updates a booking.")
     public Bookings update(Bookings bookings) {
         return bookingsService.updateBooking(bookings);
     }

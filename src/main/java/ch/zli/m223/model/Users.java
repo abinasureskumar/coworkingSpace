@@ -30,9 +30,9 @@ public class Users {
     @Column(nullable = false)
     private Boolean isAdmin;
 
-    @OneToMany(mappedBy = "users")
-    @JsonIgnoreProperties("users")
-    private Set<Bookings>users;
+    @OneToMany(mappedBy = "bookings")
+    @JsonIgnoreProperties("bookings")
+    private Set<Bookings>bookings;
 
     // id
     public Long getId() {
@@ -77,5 +77,14 @@ public class Users {
 
     public void setPasswort(String passwort) {
         this.passwort = passwort;
+    }
+
+    // isAdmin
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }

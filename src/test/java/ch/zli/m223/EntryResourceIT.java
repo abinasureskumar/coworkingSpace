@@ -1,4 +1,4 @@
-package ch.zli.m223;
+/* package ch.zli.m223;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
@@ -6,3 +6,4 @@ import io.quarkus.test.junit.QuarkusIntegrationTest;
 public class EntryResourceIT extends EntryResourceTest {
     // Execute the same tests but in packaged mode.
 }
+ */

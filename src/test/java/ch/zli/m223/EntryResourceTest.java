@@ -1,4 +1,4 @@
-package ch.zli.m223;
+/* package ch.zli.m223;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
@@ -53,4 +53,4 @@ public class EntryResourceTest {
         given().when().contentType(ContentType.JSON).body(newEntry).put("/entries").then().statusCode(200);
     }
 
-}
+} */

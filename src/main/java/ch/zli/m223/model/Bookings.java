@@ -29,6 +29,10 @@ public class Bookings {
     @JoinColumn(updatable = false, insertable = false)
     private Users bookings;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "id")
+    private Rooms rooms;
+
     // id
     public Long getId() {
         return id;

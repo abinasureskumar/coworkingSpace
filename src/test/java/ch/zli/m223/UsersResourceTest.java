@@ -36,7 +36,19 @@ public class UsersResourceTest {
     }
 
     @Test
-    public void testUpdate() {
+    public void testPostEndpoint() {
+        var users = new Users();
+        users.setVorname("nina");
+        users.setNachname("müller");
+        users.setEmail("nina.müller@gamil.com");
+        users.setPasswort("98765");
+        users.setIsAdmin(true);
+
+        given().contentType(ContentType.JSON).body(users).post("/users").then().statusCode(200);
+    }
+
+    @Test
+    public void testPutEndpoint() {
         var users = new Users();
         users.setVorname("nina");
         users.setNachname("müller");
@@ -45,12 +57,14 @@ public class UsersResourceTest {
         users.setIsAdmin(true);
 
         var response = given().contentType(ContentType.JSON).body(users).post("/users");
+
+        var newUser = new Users();
         var id = response.jsonPath().get("id");
-        users.setVorname("markus");
-        users.setNachname("kuster");
-        users.setEmail("markus.kuster@gamil.com");
-        users.setPasswort("12345");
-        users.setIsAdmin(false);
-        given().when().delete("/users/" + id).then().statusCode(204);
+        newUser.setVorname("markus");
+        newUser.setNachname("kuster");
+        newUser.setEmail("markus.kuster@gamil.com");
+        newUser.setPasswort("12345");
+        newUser.setIsAdmin(false);
+        given().when().contentType(ContentType.JSON).body(newUser).put("/users/" + id).then().statusCode(200);
     }
 }

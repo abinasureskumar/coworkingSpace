@@ -1,6 +1,7 @@
 package ch.zli.m223.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -34,5 +35,13 @@ public class UsersService {
     @Transactional
     public Users updateUser(Users users) {
         return entityManager.merge(users);
+    }
+
+    public Optional<Users> findByEmail(String email) {
+        return entityManager
+                .createNamedQuery("ApplicationUser.findByEmail", Users.class)
+                .setParameter("email", email)
+                .getResultStream()
+                .findFirst();
     }
 }

@@ -14,7 +14,7 @@ public class Rooms {
     private Long id;
 
     @Column(nullable = false)
-    private Long roomNr;
+    private String roomNr;
 
     @OneToOne(mappedBy = "bookings")
     @JsonIgnoreProperties("bookings")
@@ -30,11 +30,11 @@ public class Rooms {
     }
 
     // roomNr
-    public Long getRoomNr() {
+    public String getRoomNr() {
         return roomNr;
     }
 
-    public void setRoomNr(Long roomNr) {
-        this.id = roomNr;
+    public void setRoomNr(String roomNr) {
+        this.roomNr = roomNr;
     }
 }
